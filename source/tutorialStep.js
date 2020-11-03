@@ -89,7 +89,7 @@ export default class TurtorialStep extends Component {
           {!endModal &&
             <View style={[styles.tooltip, tooltipPosition]}>
               <Text style={styles.tooltipText}>{tooltip}</Text>
-              {okEnable && <Button title="OK" onPress={() => this.OKButton()} />}
+              {okEnable && <Button title="OK " onPress={() => this.OKButton()} />}
             </View>
           }
           {okEnable &&
