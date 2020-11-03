@@ -69,9 +69,9 @@ export default class CoachMarks extends Component {
                   <Button title={this.props.startButtonText} onPress={() => this.startTutorial()} />
                 </View>
               </View>
-              <View style={styles.skipScene}>
+              {/* <View style={styles.skipScene}>
                 <Button title={this.props.skipButtonText} onPress={() => this.dismiss()} />
-              </View>
+              </View> */}
             </View>
           </View>
         }
