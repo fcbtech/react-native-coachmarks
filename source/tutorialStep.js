@@ -86,6 +86,7 @@ export default class TurtorialStep extends Component {
               height: fourthOverlayHeight,
             }]}
           />
+          <TouchableOpacity style={styles.backClickArea} onPress={() => this.OKButton()} />
           {!endModal &&
             <View style={[styles.tooltip, tooltipPosition]}>
               <Text style={styles.tooltipText}>{tooltip}</Text>
@@ -183,6 +184,13 @@ const styles =  StyleSheet.create({
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     position: 'absolute',
+  },
+  backClickArea: {
+    width,
+    height,
+    position: 'absolute',
+    top: 0,
+    right: 0,
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0)',
