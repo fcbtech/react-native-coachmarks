@@ -28,6 +28,7 @@ export default class CoachMarks extends Component {
     startButtonText: PropTypes.string,
     skipButtonText: PropTypes.string,
     congratsImage: PropTypes.number,
+    onStart: PropTypes.func,
     onClose: PropTypes.func,
     skipCongrats: PropTypes.bool,
   }
@@ -90,6 +91,7 @@ export default class CoachMarks extends Component {
     LayoutAnimation.easeInEaseOut();
     this.setState({ isStarting: true });
     this.startCoachMarks();
+    if (this.props.onStart) this.props.onStart()
   }
 
   setDefaultStepStates() {
