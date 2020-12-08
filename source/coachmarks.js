@@ -55,8 +55,9 @@ export default class CoachMarks extends Component {
       >
         {!this.state.isStarting &&
           <View style={styles.visibleContainer}>
-            <TouchableOpacity style={styles.backArea} activeOpacity={1} />
+            <TouchableOpacity style={styles.backArea} activeOpacity={1} onPress={() => this.startTutorial()} />
             <View style={styles.scene}>
+              <TouchableOpacity style={styles.backClickArea} activeOpacity={1} onPress={() => this.startTutorial()} />
               <View style={styles.container}>
                {this.props.congratsImage &&
                  <Image
@@ -187,6 +188,13 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     backgroundColor:'rgba(0,0,0,0.5)',
+  },
+  backClickArea: {
+    width,
+    height,
+    position: 'absolute',
+    top: 0,
+    right: 0,
   },
   container: {
     width: 300,
