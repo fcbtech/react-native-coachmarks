@@ -90,7 +90,16 @@ export default class TurtorialStep extends Component {
           {!endModal &&
             <View style={[styles.tooltip, tooltipPosition]}>
               <Text style={styles.tooltipText}>{tooltip}</Text>
-              {okEnable && <Button title="OK " onPress={() => this.OKButton()} />}
+              {okEnable &&  <View style={styles.modalActionsContainer}>
+              <TouchableOpacity
+              onPress={() => this.OKButton()}
+              // disabled={isSubmitting}
+              style={[styles.modalActions, {backgroundColor: '#0078FF'}]}>
+              <Text style={styles.actionText}>
+                OK
+              </Text>
+            </TouchableOpacity></View>
+            }
             </View>
           }
           {okEnable &&
@@ -148,6 +157,20 @@ const styles =  StyleSheet.create({
   coachMarks: {
     position: 'absolute',
   },
+  modalContainer: {
+    padding: 8,
+    paddingBottom: 0,
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  modalActionsContainer: {
+    flexDirection: 'row',
+    // backgroundColor: 'red',
+    flexGrow: 1,
+    // width: '100%',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 8
+  },
   tooltip: {
     backgroundColor: '#ffffff',
     borderColor: 'rgba(216, 213, 212, 0.8)',
@@ -158,16 +181,35 @@ const styles =  StyleSheet.create({
     minWidth: 150,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 16,
+    // paddingHorizontal: 16,
     paddingTop: 16,
+    // padding: 30,
+    paddingBottom: 25,
   },
   tooltipText: {
     color: 'rgba(0, 0, 0, 0.87)',
     textAlign: 'center',
-    paddingTop: 5,
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingTop: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
     paddingBottom: 15,
+    flexGrow: 1,
+    // flexShrink: 1,
+    fontFamily: 'Quicksand-Regular',
+    paddingVertical: 8,
+  },
+  modalActions: {
+    // flex: 1,
+    paddingVertical: 14,
+    paddingHorizontal: 28,
+    alignItems: 'center',
+    backgroundColor: 'whitesmoke',
+    borderRadius: 10,
+    // padding: 8,
+  },
+  actionText: {
+    fontFamily: 'Quicksand-Bold',
+    color: 'black',
   },
   backArea: {
     width,
