@@ -200,8 +200,8 @@ const styles =  StyleSheet.create({
   },
   modalActions: {
     // flex: 1,
-    paddingVertical: 14,
-    paddingHorizontal: 28,
+    paddingVertical: 11,
+    paddingHorizontal: 25,
     alignItems: 'center',
     backgroundColor: 'whitesmoke',
     borderRadius: 10,
